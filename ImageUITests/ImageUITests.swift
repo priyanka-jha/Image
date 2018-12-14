@@ -2,8 +2,8 @@
 //  ImageUITests.swift
 //  ImageUITests
 //
-//  Created by Megavision Technologies on 11/12/18.
-//  Copyright © 2018 Megavision Technologies. All rights reserved.
+//  Created by Priyanka Jha on 11/12/18.
+//  Copyright © 2018 Priyanka Jha. All rights reserved.
 //
 
 import XCTest

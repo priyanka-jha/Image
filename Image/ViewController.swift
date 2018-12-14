@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Image
 //
-//  Created by Megavision Technologies on 11/12/18.
-//  Copyright © 2018 Megavision Technologies. All rights reserved.
+//  Created by Priyanka Jha on 11/12/18.
+//  Copyright © 2018 Priyanka Jha. All rights reserved.
 //
 
 import UIKit
@@ -25,9 +25,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
     }
     
-   
-    
-
+   //Click picture using camera
     @IBAction func clickPicture(_ sender: UIButton) {
       //check if camera is availabe
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -44,6 +42,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
+    //browse image from gallery
     @IBAction func browseGallery(_ sender: UIButton) {
         //check if photo gallery is accessible
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
@@ -60,7 +59,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
-    
+    //set image in imageview
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
      //imageView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
@@ -80,16 +79,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
          imagePicker.dismiss(animated: true, completion: nil)
     }
     
-    
+    //Save image in gallery
     @IBAction func savePicture(_ sender: UIButton) {
         let image = imageView.image
         let imageData = image!.jpegData(compressionQuality: 0.6)
         let compressedJPGImage = UIImage(data: imageData!)
         UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
 
-        
-        
-        let alert = UIAlertController(title: "Image saved", message: "Image has been saved to Photo Library!", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Image saved", message: "Image has been saved in Photo Library!", preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         
